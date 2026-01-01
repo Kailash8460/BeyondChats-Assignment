@@ -9,13 +9,17 @@ export async function scrapeArticle(articleUrl) {
         const $ = cheerio.load(response.data);
 
         const title = $('.entry-title').text().trim();
-        const content = $('.entry-content').html()?.trim() || '';
+        let contentHTML =
+            $(".entry-content").html()?.trim() ||
+            $(".ct-content").html()?.trim() ||
+            $(".entry-card-content").html()?.trim() ||
+            "";
         const author = $('.meta-author span').text().trim();
         const published_date = $('time').attr("datetime");
 
         return {
             title,
-            content,
+            content: contentHTML,
             author,
             published_date
         };

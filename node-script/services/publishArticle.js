@@ -12,8 +12,8 @@ export async function publishArticle(articleData) {
             title: articleData.title,
             author: articleData.author,
             published_at: articleData.published_date,
-            excerpt: articleData.excerpt,
-            content: articleData.content,
+            excerpt: articleData.excerpt || "",
+            content: articleData.content || "",
             source_url: articleData.url
         });
         return response.data;
