@@ -1,5 +1,5 @@
 {
-  "name": "script",
+  "name": "node-script",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "axios": "^1.13.2",
     "cheerio": "^1.1.2",
