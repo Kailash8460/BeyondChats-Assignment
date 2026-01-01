@@ -1,7 +1,15 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
-import dotenv from 'dotenv';
-dotenv.config();
+// chaning this because of change in folder structure
+// import dotenv from 'dotenv';
+// dotenv.config();
+
+import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
+const _filename = fileURLToPath(import.meta.url);
+const _dirname = path.dirname(_filename);
+dotenv.config({ path: path.join(_dirname, '..', '.env') });
 
 const BASE_URL = process.env.BASE_URL;
 
